@@ -1,0 +1,557 @@
+.homeMain {
+    background-color: black;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+.navBar {
+    height: 100vh;
+    width: 4%;
+    background-color: #140d19;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    padding-left: 2%;
+    justify-content: space-between;
+    z-index: 10;
+    transition: all linear 0.5s;
+}
+
+.navBtn {
+    display: grid;
+    width: 10px;
+    grid-template-columns: auto auto;
+    column-gap: 5px;
+    justify-self: center;
+    cursor: pointer;
+    align-items: center;
+}
+
+.line1,
+.line2 {
+    width: 2px;
+    height: 35px;
+    background-color: white;
+}
+
+.navBtn:hover .line1 {
+    animation: lineAnimation 0.5s infinite ease alternate;
+}
+
+.navBtn:hover .line2 {
+    animation: lineAnimation 0.5s infinite ease alternate;
+    animation-delay: 0.1s;
+}
+
+
+
+@keyframes lineAnimation {
+    50% {
+        height: 30px;
+    }
+
+    100% {
+        height: 45px;
+    }
+}
+
+.header {
+    height: 12vh;
+    margin-left: 6%;
+    display: flex;
+}
+
+.logoSection {
+    width: 50%;
+    display: flex;
+    align-items: end;
+    padding: 10px;
+    padding-left: 25px;
+}
+
+.logoSection h1 {
+    font-family: "Monument Extended Bold";
+}
+
+.dateSection {
+    display: flex;
+    justify-content: end;
+
+    padding: 15px;
+    width: 50%;
+    transform: translateX(5rem);
+    opacity: 0;
+    animation: dateView ease forwards;
+    animation-delay: 3s;
+    animation-duration: 0.5s;
+}
+@keyframes dateView {
+   to{
+    transform: translateX(0rem);
+    opacity: 1;
+   } 
+}
+
+.dateSection img {
+    width: 2rem;
+}
+
+.section1 {
+    height: 90vh;
+    margin-left: 6%;
+    display: flex;
+    align-items: center;
+    position: relative;
+    justify-content: center;
+}
+
+.quoteBtn svg {
+    position: absolute;
+    bottom: 8%;
+    left: 9%;
+    transform: translateX(-3rem);
+    opacity: 0;
+    animation: loadHeroSection ease-in-out forwards;
+    animation-duration: 1s;
+    animation-delay: 1.5s;
+    
+}
+
+
+
+
+
+.heroText {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60%;
+    height: inherit;
+    transform: translateX(-3rem);
+    opacity: 0;
+    animation: loadHeroSection ease-in-out forwards;
+    animation-duration: 1s;
+    animation-delay: 1.5s;
+}
+
+
+@keyframes loadHeroSection {
+
+    100% {
+        transform: translateX(0rem);
+        opacity: 1;
+    }
+}
+
+.heroText p {
+    color: white;
+    font-size: 3rem;
+    font-weight: 700;
+    font-family: "Monument Extended Ultrabold";
+    font-weight: 800;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.1;
+    letter-spacing: normal;
+    animation: textStroke  ease-out forwards;
+    animation-duration: 0.5s;
+    animation-delay: 2.5s;
+}
+@keyframes textStroke {
+    to{
+        text-shadow: black 0px 9.9px 0, rgb(180 176 176) 0px 10.6px 1px;
+    }
+}
+
+.dateSection p {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 200;
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.circle {
+    width: 40%;
+    height: inherit;
+    position: relative;
+    transform: translateX(-3rem);
+    opacity: 0;
+    animation: loadHeroSection ease-in-out forwards;
+    animation-duration: 1s;
+    animation-delay: 1s;
+
+}
+
+.mainCircle {
+    width: 100%;
+    margin-left: 41%;
+    margin-top: -2%;
+    animation: rotateOpposite 10s linear infinite;
+}
+
+@keyframes rotateOpposite {
+    to {
+        transform: rotate(-360deg);
+    }
+}
+
+.circleBorder {
+    border: 1px solid white;
+    position: absolute;
+    width: 126%;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    top: -15%;
+    left: 24%;
+    animation: rotate 7s linear infinite;
+}
+
+@keyframes rotate {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.circleBorderCircle {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: white;
+    border-radius: 50%;
+    top: 100%;
+    position: absolute;
+    width: 22px;
+    height: 22px;
+    background-color: white;
+    border-radius: 50%;
+    top: 13%;
+    left: 12%;
+
+}
+
+.layer {
+    width: 100%;
+    position: absolute;
+    top: 98%;
+
+}
+
+.section2 {
+    margin-top: 15%;
+    display: flex;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.puzzlePop {
+    width: 45%;
+    height: inherit;
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    opacity: 0;
+    transition: all ease 2s;
+}
+
+.puzzle {
+    width: 70%;
+}
+
+.Contents {
+    width: 32%;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: start;
+    height: inherit;
+    position: relative;
+    padding-left: 3px;
+    opacity: 0;
+}
+.contentPop{
+    animation-delay: 0.8s !important;
+    animation-duration: 1s !important;
+    animation: contentPop ease forwards;
+}
+
+
+
+@keyframes contentPop {
+    to{
+        opacity: 1;
+    }
+}
+
+
+.section2 .Contents h1 {
+    color: white;
+    font-size: 3.5rem;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.1;
+    letter-spacing: 0.96px;
+}
+
+.shadow {
+    -webkit-text-stroke: 0.8px rgb(255 255 255 / 35%);
+    color: black !important;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    transition-delay: 1.5s !important;
+    transition: all ease 1s;
+}
+
+
+
+.section3 {
+    margin-left: 6%;
+    height: 40vh;
+
+    display: flex;
+}
+
+.section3 .ufo {
+    width: 55%;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+}
+
+.section3 .ufo img {
+    margin-right: 15%;
+}
+
+.section3 .ufoPlanet {
+    width: 45%;
+    display: flex;
+    align-items: center;
+
+}
+
+.section3 .ufoPlanet img {
+    width: 35%;
+    margin-left: 15%;
+}
+
+
+
+.servicesSection {
+    margin-top: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 6%;
+    height: 100vh;
+    perspective: 1000px;
+    position: relative;
+}
+
+
+.servicesSection div {
+    border: solid white 1px;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    position: absolute;
+}
+
+.div3 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20%;
+    perspective: 1000px;
+    transform-style: preserve-3d;
+    opacity: 1;
+    transition: all 0.5s ease;
+    cursor: pointer;
+    position: relative;
+    border: none !important;
+}
+.front{
+    position: absolute !important;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid white !important;
+    backface-visibility: hidden;
+    opacity: 0;
+    overflow-y: hidden;
+    transition: box-shadow ease 0.5s;
+    perspective: 1000px;
+}
+
+.back{
+    position: absolute !important;
+    width: 100%;
+    height: 100%;
+    border: 1px solid white !important;
+    backface-visibility: hidden;
+    color: white !important;
+    transform: rotateY(180deg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+}
+
+@keyframes div3 {
+    to{
+        opacity: 1;
+    }
+}
+
+
+.div3::-webkit-scrollbar{
+    display: none;
+}
+
+.div2 {
+    width: 30%;
+    animation: rotation 10s linear infinite;
+    animation-delay: 2s;
+    opacity: 0;
+    transition: all 1s ease;
+    transition-delay: 0.5s;
+}
+
+.div1 {
+
+    width: 40%;
+    animation: rotation 20s linear infinite;
+    animation-delay: 2s;
+    opacity: 0;
+    transition: all 1s ease;
+}
+
+
+
+
+
+.servicesSection .div3 h1 {
+
+    font-family: "Monument Extended Ultrabold";
+    transition: all ease 0.8s;
+    transition-delay: 2s;
+    transform: translateY(-5rem);
+    opacity: 0;
+}
+
+
+.circle1,
+.circle2 {
+    height: 22px;
+    width: 22px;
+    border-radius: 50%;
+    background-color: white;
+    position: absolute;
+}
+
+
+
+.circle1 {
+    top: 5%;
+    left: 20%;
+}
+
+
+.circle2 {
+    bottom: 5%;
+    right: 20%;
+}
+
+.servicePlanet {
+    width: 17%;
+    position: absolute;
+    top: 80%;
+    left: 8%;
+}
+
+
+@keyframes rotation {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+
+.div3:hover .front {
+    box-shadow: 0px 0px 20px 1px rgb(114, 147, 179) inset;
+}
+
+@keyframes shake {
+
+  10%, 90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+  20%, 80% {
+    transform: translate3d(2px, 0, 0);
+  }
+  
+  30%, 50%, 70% {
+    transform: translate3d(-2px, 0, 0);
+  }
+  40%, 60% {
+    transform: translate3d(2px, 0, 0);
+}
+}
+
+.brandSection {
+    text-align: center;
+    margin-left: 6%;
+    perspective: 1000px;
+}
+
+.brandSection h1 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 3rem;
+    font-weight: 700;
+    margin: 0;
+    line-height: 1;
+    -webkit-text-stroke: 1px rgb(255 255 255 / 100%);
+    color: transparent;
+}
+
+.brandSection span {
+    -webkit-text-stroke: transparent;
+}
+
+.brandSectionUfo {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.brandSectionUfo img {
+    width: 8%;
+    margin-top: 5%;
+}
+
+.brandSectionUfo::after {
+    content: '';
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-bottom: 120px solid rgb(147, 141, 141);
+    width: 20px;
+    height: 0;
+}
+
+.brandSectionLayer {
+    margin-top: 5%;
+}
+
+.brandSectionLayer img {
+    width: 100%;
+    aspect-ratio: 1/0.2;
+}

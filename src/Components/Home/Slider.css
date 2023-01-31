@@ -1,0 +1,34 @@
+
+.projectSection .slick-slide{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.projectSection .slick-next{
+    position: absolute;
+    right: 30%;
+    z-index: 5;
+}
+.projectSection .slick-prev::before{
+    display: none;
+}
+.slick-next::before{
+    display: none;
+}
+.projectSlider img{
+    width: 50%;
+}
+.poster1,.Fposter1{
+    width: 43%;
+    position:absolute;
+    left:10%;
+    z-index: 0;
+    transform-origin: center;
+}
+.poster2,.Fposter2{
+    width: 43%;
+    position:absolute;
+    right:0;
+    z-index: 2; 
+    transform-origin:  left center;
+}

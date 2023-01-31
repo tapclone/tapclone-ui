@@ -1,3 +1,27 @@
+.star {
+    --size: 20vmin;
+    --holes: calc(var(--size)*.495);
+    width: var(--size);
+    aspect-ratio: 1/1;
+    position: fixed;
+    background: white;  
+    --mask: radial-gradient(var(--holes) at var(--holes) var(--holes), #0000 99%,#000) calc(var(--holes)*-1) calc(var(--holes)*-1);
+    -webkit-mask: var(--mask);
+    mask: var(--mask);
+    border-radius: 50%;
+    animation: sparkle 1s linear forwards;
+    z-index: 0;
+  }
+  @keyframes sparkle {
+    0% { transform: scale(0); }
+    25% { opacity: 1; }
+    100% { opacity: 0; }
+  }
+/* @keyframes blinkStar {
+        0% { transform: scale(0); }
+        25% { opacity: 1; }
+        100% { opacity: 0; }
+} */
 .homeMain {
     background-color: black;
     width: 100%;
@@ -85,11 +109,12 @@
     animation-delay: 3s;
     animation-duration: 0.5s;
 }
+
 @keyframes dateView {
-   to{
-    transform: translateX(0rem);
-    opacity: 1;
-   } 
+    to {
+        transform: translateX(0rem);
+        opacity: 1;
+    }
 }
 
 .dateSection img {
@@ -99,6 +124,7 @@
 .section1 {
     height: 90vh;
     margin-left: 6%;
+
     display: flex;
     align-items: center;
     position: relative;
@@ -114,7 +140,7 @@
     animation: loadHeroSection ease-in-out forwards;
     animation-duration: 1s;
     animation-delay: 1.5s;
-    
+
 }
 
 
@@ -153,12 +179,13 @@
     font-style: normal;
     line-height: 1.1;
     letter-spacing: normal;
-    animation: textStroke  ease-out forwards;
+    animation: textStroke ease-out forwards;
     animation-duration: 0.5s;
     animation-delay: 2.5s;
 }
+
 @keyframes textStroke {
-    to{
+    to {
         text-shadow: black 0px 9.9px 0, rgb(180 176 176) 0px 10.6px 1px;
     }
 }
@@ -179,7 +206,7 @@
     animation: loadHeroSection ease-in-out forwards;
     animation-duration: 1s;
     animation-delay: 1s;
-
+    z-index: 2;
 }
 
 .mainCircle {
@@ -254,6 +281,8 @@
     align-items: baseline;
     opacity: 0;
     transition: all ease 2s;
+
+    z-index: 5;
 }
 
 .puzzle {
@@ -271,7 +300,8 @@
     padding-left: 3px;
     opacity: 0;
 }
-.contentPop{
+
+.contentPop {
     animation-delay: 0.8s !important;
     animation-duration: 1s !important;
     animation: contentPop ease forwards;
@@ -280,7 +310,7 @@
 
 
 @keyframes contentPop {
-    to{
+    to {
         opacity: 1;
     }
 }
@@ -324,6 +354,8 @@
 
 .section3 .ufo img {
     margin-right: 15%;
+    position: relative;
+    z-index: 2;
 }
 
 .section3 .ufoPlanet {
@@ -336,6 +368,8 @@
 .section3 .ufoPlanet img {
     width: 35%;
     margin-left: 15%;
+    position: relative;
+    z-index: 2;
 }
 
 
@@ -349,6 +383,7 @@
     height: 100vh;
     perspective: 1000px;
     position: relative;
+    z-index: 2;
 }
 
 
@@ -372,7 +407,8 @@
     position: relative;
     border: none !important;
 }
-.front{
+
+.front {
     position: absolute !important;
     top: 0;
     left: 0;
@@ -389,7 +425,7 @@
     perspective: 1000px;
 }
 
-.back{
+.back {
     position: absolute !important;
     width: 100%;
     height: 100%;
@@ -404,13 +440,13 @@
 }
 
 @keyframes div3 {
-    to{
+    to {
         opacity: 1;
     }
 }
 
 
-.div3::-webkit-scrollbar{
+.div3::-webkit-scrollbar {
     display: none;
 }
 
@@ -490,19 +526,26 @@
 
 @keyframes shake {
 
-  10%, 90% {
-    transform: translate3d(-1px, 0, 0);
-  }
-  20%, 80% {
-    transform: translate3d(2px, 0, 0);
-  }
-  
-  30%, 50%, 70% {
-    transform: translate3d(-2px, 0, 0);
-  }
-  40%, 60% {
-    transform: translate3d(2px, 0, 0);
-}
+    10%,
+    90% {
+        transform: translate3d(-1px, 0, 0);
+    }
+
+    20%,
+    80% {
+        transform: translate3d(2px, 0, 0);
+    }
+
+    30%,
+    50%,
+    70% {
+        transform: translate3d(-2px, 0, 0);
+    }
+
+    40%,
+    60% {
+        transform: translate3d(2px, 0, 0);
+    }
 }
 
 .brandSection {
@@ -533,25 +576,118 @@
     flex-direction: column;
 }
 
-.brandSectionUfo img {
+.brandSectionUfo img:nth-child(1) {
     width: 8%;
     margin-top: 5%;
 }
-
-.brandSectionUfo::after {
-    content: '';
-    border-left: 50px solid transparent;
-    border-right: 50px solid transparent;
-    border-bottom: 120px solid rgb(147, 141, 141);
-    width: 20px;
-    height: 0;
+.brandSectionUfo img:nth-child(2){
+    width: 21%;
+    margin-top: -4%;
 }
 
-.brandSectionLayer {
-    margin-top: 5%;
-}
+
 
 .brandSectionLayer img {
     width: 100%;
     aspect-ratio: 1/0.2;
+    margin-top: -2%;
+}
+
+.projectSection h1 {
+    text-align: center;
+    font-weight: 800;
+    font-family: "Monument Extended Ultrabold";
+    line-height: 1;
+    letter-spacing: 0.54px;
+    font-size: 2.4rem;
+
+}
+.packagesSection h1{
+    font-family: "Monument Extended Ultrabold";
+}
+.contactSection{
+    perspective: 1000px;
+}
+.contactSection h1{
+    font-size: 3.2rem !important;
+    line-height: 1;
+}
+.contactSection .contactButton{
+    background-color: #e0e673;
+    width:30% ;
+    height: 7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+    transform-style: preserve-3d;
+    transform: rotateX(60deg);
+    position: relative;
+}
+.contactSection .contactButton span{
+    color: black;
+    font-weight: 800;
+    font-size: 1.5rem;
+    position: absolute;
+    transform: rotateX(-60deg)translateZ(20px);
+}
+.contactSection .contactButton::after{
+    content: '';
+    background-color:  #60662f;
+    width: 98%;
+    height: 25%;
+    transform: rotateX(-100deg)translateZ(0px);
+    position: absolute;
+    top: 100%;
+}
+section{
+    position: relative !important;
+    z-index: 2 !important;
+}
+.logoSlider .brandSliderDiv{
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.logoSlider{
+    width: 80%;
+    margin-top: -10%;
+}
+/* .slick-list{
+    padding: 0px 70px !important;
+} */
+.logoSlider .brandSliderDiv img{
+    width: 9rem;
+    aspect-ratio: 1/0.5;
+    object-fit: contain;
+    
+}
+.logoSlider .brandSliderDiv{
+    transform: scale(0.5);
+    opacity: 0.4;
+    transition: 0.2s ease;
+}
+
+.activeSlide{
+    transform: scale(1.5) !important;
+    opacity: 1 !important;
+    transition: 0.2s ease;
+}
+.logoSlider .slick-slide{
+    display: flex !important;
+    justify-content: center !important;
+    height: 10rem;
+    align-items: center;
+}
+.activeSlide::after{
+    content: '';
+    display: block;
+    background-color:  #d9d9d9;
+    border-radius: 100%;
+    width: 40%;
+    height: 5px;
+    position: absolute;
+    top: 5rem;
+    opacity: 0.2;
 }

@@ -19,16 +19,32 @@
     width: 50%;
 }
 .poster1,.Fposter1{
-    width: 43%;
+    width: 45%;
+    height: 100%;
     position:absolute;
     left:10%;
     z-index: 0;
     transform-origin: center;
+    background-position: center !important;
+    background-size: contain !important;
+    background-repeat: no-repeat !important;
+    transition: background-image 1s ease !important;
 }
 .poster2,.Fposter2{
-    width: 43%;
+    width: 45%;
+    height: 100%;
     position:absolute;
-    right:0;
+    right:10%;
     z-index: 2; 
     transform-origin:  left center;
+    background-position: center !important;
+    background-size: contain !important;
+    background-repeat: no-repeat !important;
+    transition: background-image 1s ease !important;
+}
+.slideBtn{
+    transition: 0.3s;
+}
+.slideBtn:hover{
+    transform: scale(1.1);
 }

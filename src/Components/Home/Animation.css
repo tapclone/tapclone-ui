@@ -1,24 +1,43 @@
 .rocketPath {
-  width: 62%;
+  width: 42rem;
   position: absolute;
-  top: 2%;
-  right: 22%;
   opacity: 1;
   z-index: 0;
+  right: 22%;
+  top: 3%;
+}
+.rocketPath3{
+  width: 64%;
+  position: absolute;
+  left: 50%;
+  right: 50%;
+  transform: translate(-75%, 100%);
+  opacity: 0;
+}
+.rocketPath2{
+  width: 40%;
+  position: absolute;
+  left: 15%;
+  transform: scaleY(-1) scaleX(1) rotate(70deg);
+  opacity: 0;
 }
 
-#pathBlack {
+#pathBlack,#pathBlack2,#pathBlack3,#pathBlack4 {
   stroke-dasharray: 8;
 }
 
-#pathWhite {
+#pathWhite,#pathWhite2,#pathWhite3{
   stroke: rgb(185, 183, 183);
   stroke-dasharray: 1200;
   stroke-dashoffset: 0;
 }
+#pathWhite4 {
+  stroke: rgb(185, 183, 183);
+  stroke-dasharray: 5500;
+  stroke-dashoffset: 0;
+}
 
-
-.rocket {
+.rocket,.rocket2,.rocket3,.rocket4 {
   position: absolute;
   /* top: 5%;
   right: 22%; */

@@ -18,8 +18,8 @@ function ProjectSlider() {
     const img2 = document.querySelector('.Fposter2')
     const posterContainer=document.querySelector('FposterContainer')
     
-    gsap.timeline().to(img2,{translateX:'-10%',duration:0.5})
-    .to(img1,{rotateY:180,translateX:'-1%',filter:'blur(3px)',duration:1},0)
+    gsap.timeline().to(img2,{translateX:'-11%',duration:0.5})
+    .to(img1,{rotateY:180,translateX:'-11%',filter:'blur(3px)',duration:1},0)
 
     // .to(img1,{filter: "blur(3px)",duration:0.2})
     // .to(img2,{filter:'blur(3px)',duration:0.2})
@@ -40,12 +40,12 @@ function ProjectSlider() {
   }
 
   return (
-    <div  style={{ display: 'flex', height: '100%', transformStyle: 'preserve-3d',columnGap:'1rem' }}>
-      <div className='FposterContainer' style={{width:'100%',height:'100%',display:'flex',columnGap:'1rem'}}>
-        <img className='Fposter1' style={{left:'0',transformOrigin:'right center',zIndex:'2'}} src={array[currentIndex2].image1} alt="" />
-        <img className='Fposter2' style={{right:'10%',zIndex:'0'}} src={array[currentIndex2].image2} alt="" />
+    <div  style={{ display: 'flex',width:'100%', height: '100%', transformStyle: 'preserve-3d',columnGap:'1rem',alignItems:'center' }}>
+      <div className='FposterContainer' style={{height:'100%',width:'100%',display:'flex',columnGap:'1rem'}}>
+        <div className='Fposter1' style={{background:`url(${array[currentIndex2].image1})`,aspectRatio:'1',left:'0',transformOrigin:'right center',zIndex:'2'}}></div>
+        <div className='Fposter2' style={{background:`url(${array[currentIndex2].image2})`,aspectRatio:"1",zIndex:'0'}}></div>
       </div>
-      <img onClick={change2} src={button} style={{ width: '5%',cursor:'pointer'}} alt="" />
+      <img className='slideBtn' onClick={change2} src={button} style={{ width: '5%',cursor:'pointer',position:'absolute',right:'0'}} alt="" />
     </div>
 
   )
